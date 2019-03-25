@@ -11,60 +11,35 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', 'HomeController@getHome');
 
-Route::get('login',function(){
-    return view('/auth/login');
+Route::get('login', function () {
+    return view('auth.login');
 });
-Route::get('logout',function(){
-    return view ('/auth/logout');
+Route::get('logout', function () {
+    return view('auth.logout');
 });
-Route::get('catalog',function(){
-    return view('catalog.index');
-});
+Route::get('catalog', 'CatalogController@getIndex');
 
-Route::get('catalog/show/{id}',function($id){
-    return view ('catalog.show',array('id'=>$id));
-});
 
-Route::get('catalog/create ',function(){
-    return view ('catalog/create.create');
-});
+Route::get('catalog/show', 'CatalogController@getShow');
 
-Route::get('catalog/edit/{id} ',function($id){
-    return view ('/catalog/edit.edit',array('id'=>$id));
-});
+Route::get('catalog/create ', 'CatalogController@getCreate');
 
-Route::get('author',function(){
-    return ('Listado de escritores');
-});
+Route::get('catalog/edit', 'CatalogController@getEdit');
 
-Route::get('author/show/{id}',function($id){
-    return ('Vista detalle de autor');
-});
+Route::get('author', 'AuthorController@getIndex');
 
-Route::get('author/create',function(){
-    return ('Añadir autor');
-});
+Route::get('author/show', 'AuthorController@getShow');
 
-Route::get('author/edit/{id}',function($id){
-    return ('Modificar autor');
-});
+Route::get('author/create', 'AuthorController@getCreate');
 
-Route::get('editorial ',function(){
-    return ('Listado de editoriales');
-});
+Route::get('author/edit', 'AuthorController@getEdit');
 
-Route::get('editorial/show/{id}',function($id){
-    return ('Vista detalle de editorial');
-});
+Route::get('editorial ', 'EditorialController@getIndex');
 
-Route::get('editorial/create',function(){
-    return ('Añadir editorial');
-});
+Route::get('editorial/show', 'EditorialController@getShow');
 
-Route::get('editorial/edit/{id}',function($id){
-    return ('Modificar editorial');
-});
+Route::get('editorial/create', 'EditorialController@getCreate');
+
+Route::get('editorial/edit', 'EditorialController@getEdit');
