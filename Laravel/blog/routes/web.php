@@ -12,40 +12,36 @@
 */
 
 Route::get('/', function () {
-    return ('welcome');
-});
-
-Route::get('/Ruta',function(){
-    return ('Texto a mostrar');
+    return view('home');
 });
 
 Route::get('login',function(){
-    return ('Login usuario');
+    return view('/auth/login');
 });
 Route::get('logout',function(){
-    return ('Logout usuario');
+    return view ('/auth/logout');
 });
 Route::get('catalog',function(){
-    return ('Listado libros');
+    return view('catalog.index');
 });
 
 Route::get('catalog/show/{id}',function($id){
-    return ('Vista detalle libro{id}');
+    return view ('catalog.show',array('id'=>$id));
 });
 
 Route::get('catalog/create ',function(){
-    return ('Añadir libro');
+    return view ('catalog/create.create');
 });
 
-Route::get('catalog/edit/{id} ',function(){
-    return ('Modificar libro {id}');
+Route::get('catalog/edit/{id} ',function($id){
+    return view ('/catalog/edit.edit',array('id'=>$id));
 });
 
 Route::get('author',function(){
     return ('Listado de escritores');
 });
 
-Route::get('author/show/{id}',function(){
+Route::get('author/show/{id}',function($id){
     return ('Vista detalle de autor');
 });
 
@@ -53,7 +49,7 @@ Route::get('author/create',function(){
     return ('Añadir autor');
 });
 
-Route::get('author/edit/{id}',function(){
+Route::get('author/edit/{id}',function($id){
     return ('Modificar autor');
 });
 
@@ -61,7 +57,7 @@ Route::get('editorial ',function(){
     return ('Listado de editoriales');
 });
 
-Route::get('editorial/show/{id}',function(){
+Route::get('editorial/show/{id}',function($id){
     return ('Vista detalle de editorial');
 });
 
@@ -69,6 +65,6 @@ Route::get('editorial/create',function(){
     return ('Añadir editorial');
 });
 
-Route::get('editorial/edit/{id}',function(){
+Route::get('editorial/edit/{id}',function($id){
     return ('Modificar editorial');
 });
