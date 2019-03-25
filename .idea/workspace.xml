@@ -1,17 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9de99d64-8db1-4f03-b556-56b4b42b77da" name="Default" comment="Adding Practica Uno to Laravel Libreria">
-      <change afterPath="$PROJECT_DIR$/Laravel/blog/resources/views/auth/login.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Laravel/blog/resources/views/catalog/create/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Laravel/blog/resources/views/catalog/edit/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Laravel/blog/resources/views/catalog/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Laravel/blog/resources/views/catalog/show.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Laravel/blog/resources/views/home.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Laravel/blog/resources/views/layouts/master.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Laravel/blog/resources/views/partials/navbar.blade.php" afterDir="false" />
+    <list default="true" id="9de99d64-8db1-4f03-b556-56b4b42b77da" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Laravel/blog/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/Laravel/blog/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -245,7 +236,7 @@
       <workItem from="1553514201035" duration="1704000" />
       <workItem from="1553516016195" duration="132000" />
       <workItem from="1553516164537" duration="119000" />
-      <workItem from="1553516726147" duration="3604000" />
+      <workItem from="1553516726147" duration="3615000" />
     </task>
     <task id="LOCAL-00001" summary="Patch 0.1 Removing unused directories">
       <created>1553509170843</created>
@@ -254,11 +245,18 @@
       <option name="project" value="LOCAL" />
       <updated>1553509170843</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Adding Practica Uno to Laravel Libreria">
+      <created>1553520338244</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1553520338244</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8822000" />
+    <option name="totallyTimeSpent" value="8833000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
