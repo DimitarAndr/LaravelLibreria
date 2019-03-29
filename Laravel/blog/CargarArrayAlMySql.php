@@ -98,18 +98,25 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
+
+
 foreach ($arrayLibros as $libro) {
-    $title=$libro['title'];
+    $title = ($libro['title']);
     var_dump($title);
-    $year=$libro['year'];
+    $year = ($libro['year']);
     var_dump($year);
-    $escritor=$libro['escritor'];
+    $escritor = ($libro['escritor']);
     var_dump($escritor);
-    $rented=$libro['rented'];
-    $rented=($rented==true)?1:0;
+    $rented = $libro['rented'];
+    $rented = ($rented == true) ? 1 : 0;
     var_dump($rented);
-    $synopsis=$libro['synopsis'];
+    $synopsis = ($libro['synopsis']);
     var_dump($synopsis);
+
+    /*Pozvolqva dobavqne na znachi v BD*/
+
+    mysqli_set_charset( $conn, 'utf8');
+
     $sql = "INSERT INTO libros (title,year,escritor,rented,synopsis)
 VALUES ('$title','$year','$escritor',$rented,'$synopsis')";
     var_dump($sql);

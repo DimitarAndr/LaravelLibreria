@@ -3,19 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Libro;
-use Illuminate\Http\Request;
 
 class CatalogController extends Controller
 {
     public function getIndex()
     {
-       $allLibros=Libro::listAllLibros();
-        return view('catalog.index',['allLibros'=>$allLibros]);
+       $infoAllLibrosCat=Libro::listAllLibros();
+        return view('catalog.index',['infoAllLibrosCat'=>$infoAllLibrosCat]);
     }
 
     public function getShow($id)
     {
-        $libro=Libro::showLibro($id);
+        $libro=Libro::showLibro($id+1);
         return view('catalog.show',['libro'=>$libro]);
     }
 
@@ -28,6 +27,15 @@ class CatalogController extends Controller
     {
 
         //return view('catalog.edit.edit', array('arrayLibros'=>$arrayLibros[$id]));
+    }
+
+    public function getLibrosForDelete(){
+        $infodDeleteLibro=Libro::getInfoDelete();
+        return view('catalog.delete.delete',['infodDeleteLibro'=>$infodDeleteLibro]);
+    }
+
+    public function getDelete($id){
+
     }
 
 }
