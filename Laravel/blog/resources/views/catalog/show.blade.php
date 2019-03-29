@@ -16,7 +16,7 @@ $libroDisponible='<p>Libro Disponible</p><button type="button" class="btn btn-sm
 <div class="container">
     <div class="row">
         <div class="col-sm-4">
-            <h2>{{$arrayLibros['title']}}</h2>
+            <h2>{{$libro['title']}}</h2>
             <img class="img-fluid"
                  src="https://purepng.com/public/uploads/large/purepng.com-bookbookillustratedwrittenprintedliterature-1421526452123etpkk.png">
         </div>
@@ -25,19 +25,19 @@ $libroDisponible='<p>Libro Disponible</p><button type="button" class="btn btn-sm
             <table id="titleLibro" class="table">
                 <tr>
                     <td class="text-uppercase">Year</td>
-                    <td>{{$arrayLibros['year']}}</td>
+                    <td>{{$libro['year']}}</td>
                 </tr>
                 <tr>
                     <td class="text-uppercase">Escritor</td>
-                    <td>{{$arrayLibros['escritor']}}</td>
+                    <td>{{$libro['escritor']}}</td>
                 </tr>
                 <tr>
                     <td class="text-uppercase">Rented</td>
-                    <td>{!!($arrayLibros['rented']==true)?$libroPrestado : $libroDisponible!!}</td>
+                    <td>{!!($libro['rented']==true)?$libroPrestado : $libroDisponible!!}</td>
                 </tr>
                 <tr>
                     <td class="text-uppercase">Synopsis</td>
-                    <td>{{$arrayLibros['synopsis']}}</td>
+                    <td>{{$libro['synopsis']}}</td>
                 </tr>
             </table>
             <div class="buttones align-bottom" style="margin-top: 15%">
