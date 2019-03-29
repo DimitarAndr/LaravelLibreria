@@ -5,7 +5,7 @@
  * Date: 25.3.2019 г.
  * Time: 13:50
  */
-var_dump($arrayLibros);
+
 ?>
 @include('partials.navbar')
 <html>

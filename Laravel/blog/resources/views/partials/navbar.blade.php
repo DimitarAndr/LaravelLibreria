@@ -34,8 +34,14 @@
                         Nuevo libro
                     </a>
                 </li>
-            </ul>
+                <li{{ Request::is('catalog/delete') ? ' class=active' : ''}}>
+                    <a href="{{url('/catalog/delete')}}">
+                        <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+                        Eliminar libro
+                    </a>
+                </li>
 
+            </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li>
                     <a href="{{url('logout')}}">
