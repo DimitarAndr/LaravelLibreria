@@ -8,7 +8,6 @@
 
 ?>
 @include ('partials.navbar')
-<h1>Proba Proba</h1>
 <div class="row">
     @foreach($infoAllLibrosCat as $key => $libro )
         <div class="col-xs-6 col-sm-4 col-md-3 text-center">
