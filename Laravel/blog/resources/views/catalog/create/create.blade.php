@@ -15,7 +15,7 @@
     <div class="row">
         <div class="col-sm-8">
             <h2 class="font-weight-bold font-italic">Anadir Nuevo Libro</h2>
-            <form>
+            <form method="post" action="{{route('addLibro'),['request'=>$request]}}">
                 <div class="form-group">
                     <label for="Titulo" class="text-capitalize text-muted  font-weight-bolder">Titulo Libro</label>
                     <input type="text" class="form-control" name="title" id="titleLibro" placeholder="Titulo">
@@ -37,7 +37,6 @@
                 </div>
                 <input type="button" class="btn btn-success float-sm-right" name="submit" value="Anadir Libro"/>
             </form>
-
         </div>
     </div>
 </div>

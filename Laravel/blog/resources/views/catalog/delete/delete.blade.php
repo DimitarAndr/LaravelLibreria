@@ -31,18 +31,24 @@
     </thead>
     <tbody>
     @foreach($infodDeleteLibro as $key => $libro )
-        {{--<a href="{{$key}}">--}}<tr>
+        {{--<a href="{{$key}}">--}}
+        <tr>
             <td>{{$libro['id']}}</td>
             <td>{{$libro['title']}}</td>
             <td>{{$libro['year']}}</td>
             <td>{{$libro['escritor']}}</td>
-            <td><button class="btn btn-danger" href="{{action('CatalogController@getDelete',$key)}}">Eliminar Libro</button></td>
+
+            <td>
+                <a class="btn btn-danger btn-ok" href="{{URL::action('CatalogController@getDelete',$libro['id'])}}">Delete</a>
+            </td>
         </tr>
-       {{-- <div class="list-group">
-            <a href="{{ url('/catalog/show/' . $key ) }}"
-               class="list-group-item list-group-item-action list-group-item-danger"> {{$libro['title']}}</a>
-        </div>--}}
-            @endforeach
+        {{-- <div class="list-group">
+             <a href="{{ url('/catalog/show/' . $key ) }}"
+                class="list-group-item list-group-item-action list-group-item-danger"> {{$libro['title']}}</a>
+         </div>--}}
+    @endforeach
     </tbody>
 </table>
+
+
 

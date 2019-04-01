@@ -21,16 +21,17 @@ Route::get('logout', function () {
 });
 Route::get('catalog', 'CatalogController@getIndex');
 
-
 Route::get('catalog/show/{id}', 'CatalogController@getShow');
 
 Route::get('catalog/create', 'CatalogController@getCreate');
+
+Route::post('catalog/create/{request}', 'CatalogController@addLibro')->name('addLibro');
 
 Route::get('catalog/edit/{id}', 'CatalogController@getEdit');
 
 Route::get('catalog/delete', 'CatalogController@getLibrosForDelete');
 
-Route::get('catalog/delete{$id}', 'CatalogController@getDelete');
+Route::get('catalog/delete/{id}','CatalogController@getDelete');
 
 Route::get('author', 'AuthorController@getIndex');
 
