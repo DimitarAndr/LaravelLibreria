@@ -27,13 +27,13 @@ Route::get('catalog/create', 'CatalogController@getCreate');
 
 Route::post('catalog/create', 'CatalogController@addLibro');
 
-Route::get('catalog/showEdit/{id}', 'CatalogController@showEdit');
+Route::post('catalog/edit', 'CatalogController@getEdit');
 
-Route::post('catalog/showEdit', 'CatalogController@getEdit');
+Route::get('catalog/edit/{id}', 'CatalogController@showEdit');
 
 Route::get('catalog/delete', 'CatalogController@getLibrosForDelete');
 
-Route::get('catalog/delete/{id}','CatalogController@getDelete');
+Route::get('catalog/delete/{id}', 'CatalogController@getDelete');
 
 Route::get('author', 'AuthorController@getIndex');
 

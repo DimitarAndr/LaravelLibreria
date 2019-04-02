@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Libro;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class CatalogController extends Controller
 {
@@ -40,12 +41,14 @@ class CatalogController extends Controller
 
     public function showEdit($id)
     {
+       Session::put('id',$id);
         return view('catalog.edit.edit');
     }
 
     public function getEdit(){
-        var_dump($_REQUEST);
-        return view('catalog.edit.edit');
+        $id=Session::get('id');
+        $resultEdit = Libro::editLibro($id);
+        return $this->getIndex();
 
     }
 

@@ -12,8 +12,8 @@
 <head>
 </head>
 <body>
-<h2>Anadir Nuevo Libro</h2>
-<form method="post" action="/catalog/showEdit" enctype="multipart/form-data">
+<h2>Editar Libro</h2>
+<form method="post" action="/catalog/edit" enctype="multipart/form-data">
     {{ csrf_field() }}
     <div class="form-group row">
         <label for="Titulo" class="text-capitalize col-sm-3  text-muted  font-weight-bolder">Titulo Libro</label>
@@ -41,10 +41,9 @@
     </div>
     <div class="form-group row">
         <div class="offset-sm-3 col-sm-9">
-            <button type="submit" class="btn btn-primary">Anadir Libro</button>
+            <button type="submit" class="btn btn-primary">Editar Libro</button>
         </div>
     </div>
 </form>
-</div>
 </body>
 </html>

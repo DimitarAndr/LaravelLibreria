@@ -5,6 +5,7 @@
  * Date: 25.3.2019 г.
  * Time: 13:50
  */
+
 $libroPrestado = '<p>Libro Actualmente prestado</p><button type="button" class="btn btn-sm btn-danger">Devolver Libro</button>';
 $libroDisponible = '<p>Libro Disponible</p><button type="button" class="btn btn-sm btn-primary">Coger Libro</button>'
 ?>
@@ -38,8 +39,8 @@ $libroDisponible = '<p>Libro Disponible</p><button type="button" class="btn btn-
                 </tr>
             </table>
             <div class="buttones align-bottom" style="margin-top: 15%">
-                <button type="button" class="btn btn-secondary"><a href="{{ url('/catalog/showEdit/' . $libro['id'] ) }}">Editar</a></button>
-                <button type="button" class="btn btn-secondary">Volver Catalogo</button>
+                <button type="button" class="btn btn-secondary"><a style="text-decoration: none;color:white" href="{{ url('/catalog/edit',$libro['id'])}}">Editar</a></button>
+                <button type="button" class="btn btn-secondary"><a style="text-decoration: none;color:white" href="{{ url('/catalog')}}">Volver Catalogo</a></button>
             </div>
         </div>
     </div>

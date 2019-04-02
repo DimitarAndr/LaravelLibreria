@@ -56,7 +56,19 @@ class Libro extends Model
 
     public static function editLibro($id)
     {
-        var_dump($id);
-        var_dump($_REQUEST);
+        $libro = Libro::findOrFail($id);
+        if ($_REQUEST['title']!='') {
+           $libro->title=$_REQUEST['title'];
+        }
+        if ($_REQUEST['year']!='') {
+            $libro->year=$_REQUEST['year'];
+        }
+        if ($_REQUEST['escritor']!='') {
+            $libro->escritor=$_REQUEST['escritor'];
+        }
+        if ($_REQUEST['synopsis']!='') {
+            $libro->synopsis=$_REQUEST['synopsis'];
+        }
+       $libro->save();
     }
 }
