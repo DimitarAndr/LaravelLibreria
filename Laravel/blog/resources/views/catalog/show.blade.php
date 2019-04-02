@@ -6,12 +6,9 @@
  * Time: 13:50
  */
 $libroPrestado = '<p>Libro Actualmente prestado</p><button type="button" class="btn btn-sm btn-danger">Devolver Libro</button>';
-$libroDisponible='<p>Libro Disponible</p><button type="button" class="btn btn-sm btn-primary">Coger Libro</button>'
+$libroDisponible = '<p>Libro Disponible</p><button type="button" class="btn btn-sm btn-primary">Coger Libro</button>'
 ?>
 @include('partials.navbar')
-<html>
-<head>
-</head>
 <body>
 <div class="container">
     <div class="row">
@@ -41,8 +38,8 @@ $libroDisponible='<p>Libro Disponible</p><button type="button" class="btn btn-sm
                 </tr>
             </table>
             <div class="buttones align-bottom" style="margin-top: 15%">
-            <button type="button" class="btn btn-secondary">Editar</button>
-            <button type="button" class="btn btn-secondary">Volver Catalogo</button>
+                <button type="button" class="btn btn-secondary"><a href="{{ url('/catalog/showEdit/' . $libro['id'] ) }}">Editar</a></button>
+                <button type="button" class="btn btn-secondary">Volver Catalogo</button>
             </div>
         </div>
     </div>

@@ -15,7 +15,7 @@ class CatalogController extends Controller
 
     public function getShow($id)
     {
-        $libro = Libro::showLibro($id + 1);
+        $libro = Libro::showLibro($id);
         return view('catalog.show', ['libro' => $libro]);
     }
 
@@ -24,18 +24,29 @@ class CatalogController extends Controller
         return view('catalog.create.create');
     }
 
-    public function addLibro(Request $request)
+    public function addLibro()
     {
-        echo "aaaaaaaaa";
-        dd($request);
-        return view('catalog.create.create');
+        $title = $_REQUEST['title'];
+        $ano = $_REQUEST['year'];
+        $escritor=$_REQUEST['escritor'];
+        $synopsis=$_REQUEST['synopsis'];
+        $infoAddLibro = array('title'=>$title,'year'=>$ano,'escritor'=>$escritor,'rented'=>0,'synopsis'=>$synopsis);
+
+        Libro::addNewLibro($infoAddLibro);
+
+        return $this->getIndex();
 
     }
 
-    public function getEdit($id)
+    public function showEdit($id)
     {
+        return view('catalog.edit.edit');
+    }
 
-        //return view('catalog.edit.edit', array('arrayLibros'=>$arrayLibros[$id]));
+    public function getEdit(){
+        var_dump($_REQUEST);
+        return view('catalog.edit.edit');
+
     }
 
     public function getLibrosForDelete()

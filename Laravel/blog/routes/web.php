@@ -25,9 +25,11 @@ Route::get('catalog/show/{id}', 'CatalogController@getShow');
 
 Route::get('catalog/create', 'CatalogController@getCreate');
 
-Route::post('catalog/create/{request}', 'CatalogController@addLibro')->name('addLibro');
+Route::post('catalog/create', 'CatalogController@addLibro');
 
-Route::get('catalog/edit/{id}', 'CatalogController@getEdit');
+Route::get('catalog/showEdit/{id}', 'CatalogController@showEdit');
+
+Route::post('catalog/showEdit', 'CatalogController@getEdit');
 
 Route::get('catalog/delete', 'CatalogController@getLibrosForDelete');
 

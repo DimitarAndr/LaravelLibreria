@@ -3,9 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Input;
 
 class Libro extends Model
 {
+    public $timestamps = false;
+
     public static function listAllLibros()
     {
         $titles = [];
@@ -37,5 +40,23 @@ class Libro extends Model
         Libro::findOrFail($id)->delete();
         $responseDeleteLibro = "Libro borado";
         return ($responseDeleteLibro);
+    }
+
+    public static function addNewLibro($infoAddLibro)
+    {
+        $libro = new Libro;
+        $libro->title = $infoAddLibro['title'];
+        $libro->year = $infoAddLibro['year'];
+        $libro->escritor = $infoAddLibro['escritor'];
+        $libro->synopsis = $infoAddLibro['synopsis'];
+        $libro->save();
+        $result = "success";
+        return $result;
+    }
+
+    public static function editLibro($id)
+    {
+        var_dump($id);
+        var_dump($_REQUEST);
     }
 }
