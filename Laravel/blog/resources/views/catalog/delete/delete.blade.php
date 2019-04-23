@@ -16,9 +16,9 @@
         }
     </style>--}}
 </head>
-</html>
 
-<h2>Lista de libros</h2>
+<div class="container">
+<h2 class=text-center>Lista de libros</h2>
 <table class="table table-hover danger">
     <thead class="thead-dark">
     <tr>
@@ -37,7 +37,6 @@
             <td>{{$libro['title']}}</td>
             <td>{{$libro['year']}}</td>
             <td>{{$libro['escritor']}}</td>
-
             <td>
                 <a class="btn btn-danger btn-ok" href="{{URL::action('CatalogController@getDelete',$libro['id'])}}">Delete</a>
             </td>
@@ -49,6 +48,6 @@
     @endforeach
     </tbody>
 </table>
-
-
+</div>
+</html>
 

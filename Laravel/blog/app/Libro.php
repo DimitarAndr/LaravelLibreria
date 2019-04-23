@@ -57,18 +57,38 @@ class Libro extends Model
     public static function editLibro($id)
     {
         $libro = Libro::findOrFail($id);
-        if ($_REQUEST['title']!='') {
-           $libro->title=$_REQUEST['title'];
+        if ($_REQUEST['title'] != '') {
+            $libro->title = $_REQUEST['title'];
         }
-        if ($_REQUEST['year']!='') {
-            $libro->year=$_REQUEST['year'];
+        if ($_REQUEST['year'] != '') {
+            $libro->year = $_REQUEST['year'];
         }
-        if ($_REQUEST['escritor']!='') {
-            $libro->escritor=$_REQUEST['escritor'];
+        if ($_REQUEST['escritor'] != '') {
+            $libro->escritor = $_REQUEST['escritor'];
         }
-        if ($_REQUEST['synopsis']!='') {
-            $libro->synopsis=$_REQUEST['synopsis'];
+        if ($_REQUEST['synopsis'] != '') {
+            $libro->synopsis = $_REQUEST['synopsis'];
         }
-       $libro->save();
+        $libro->save();
+    }
+
+    public static function getNumLibros()
+    {
+        $numLibros = Libro::all('id');
+        return $numero = count($numLibros);
+
+    }
+
+    public static function cambiarEstado($id)
+    {
+        $libro = Libro::findorfail($id);
+
+        if ($libro['rented'] == 0) {
+            $libro['rented'] = 1;
+        } else {
+            $libro['rented'] = 0;
+        }
+        $libro->save();
+        return $libro;
     }
 }

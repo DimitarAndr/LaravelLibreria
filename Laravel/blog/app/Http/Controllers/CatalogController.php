@@ -39,10 +39,15 @@ class CatalogController extends Controller
 
     }
 
+    public function cambiarEstadoLibro($id){
+       $libro=Libro::cambiarEstado($id);
+        return view ('catalog.show', ['libro' => $libro]);
+    }
+
     public function showEdit($id)
     {
        Session::put('id',$id);
-        return view('catalog.edit.edit');
+        return view('catalogedit.edit');
     }
 
     public function getEdit(){

@@ -11,23 +11,29 @@
 |
 */
 
-Route::get('/', 'HomeController@getHome');
+Auth::routes();
 
-Route::get('login', function () {
-    return view('auth.login');
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/', 'HomeController@index');
+
+Route::get('auth/login', function () {
+    return view('auth/login');
 });
 Route::get('logout', function () {
-    return view('auth.logout');
+    return redirect('auth/login');
 });
 Route::get('catalog', 'CatalogController@getIndex');
 
 Route::get('catalog/show/{id}', 'CatalogController@getShow');
 
+Route::get('catalog/show/{id}', 'CatalogController@cambiarEstadoLibro');
+
 Route::get('catalog/create', 'CatalogController@getCreate');
 
 Route::post('catalog/create', 'CatalogController@addLibro');
 
-Route::post('catalog/edit', 'CatalogController@getEdit');
+Route::post('catalog/edit', 'CatalogController@getEdit')->name='EditLibro';
 
 Route::get('catalog/edit/{id}', 'CatalogController@showEdit');
 
@@ -37,7 +43,7 @@ Route::get('catalog/delete/{id}', 'CatalogController@getDelete');
 
 Route::get('author', 'AuthorController@getIndex');
 
-Route::get('author/show', 'AuthorController@getShow');
+Route::get('author/show/{id}', 'AuthorController@getShow');
 
 Route::get('author/create', 'AuthorController@getCreate');
 

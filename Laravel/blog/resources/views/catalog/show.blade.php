@@ -31,7 +31,7 @@ $libroDisponible = '<p>Libro Disponible</p><button type="button" class="btn btn-
                 </tr>
                 <tr>
                     <td class="text-uppercase">Rented</td>
-                    <td>{!!($libro['rented']==true)?$libroPrestado : $libroDisponible!!}</td>
+                    <td>{!!($libro['rented']==true)?$libroPrestado : $libroDisponible!!}<a href="{{url('CatalogController@cambiarEstadoLibro',$libro['id'])}}"></a></td>
                 </tr>
                 <tr>
                     <td class="text-uppercase">Synopsis</td>

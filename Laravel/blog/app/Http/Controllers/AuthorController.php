@@ -1,25 +1,36 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
+
+use App\Author;
 
 class AuthorController extends Controller
 {
-    public function getIndex()
+    public static function getIndex()
     {
-        return view('author');
+        $authores = Author::getAuthores();
+        return view('author.index', array('authores' => $authores));
     }
 
-    public function getShow($id)
+    public function getShow($name)
     {
-        return view('author.show', array('id' => $id));
+        if (Auth::check()) {
+            $authorInfo = Author::showAuthorInfo($name);
+            $books = Author::showAuthorBoooks($name);
+            return view('author.show', array('authorInfo' => $authorInfo), array('books' => $books));
+        }
     }
 
-    public function getCreate(){
+    public function getCreate()
+    {
         return view('author.create');
     }
 
-    public function getEdit($id){
-        return view('author.edit',array('id'=>$id));
+    public function getEdit($id)
+    {
+        return view('author.edit', array('id' => $id));
     }
 
 }
