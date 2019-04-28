@@ -50,6 +50,11 @@ class Libro extends Model
         return $result;
     }
 
+    public static function getNextId(){
+        $nextId=Libro::max('id')+1;
+        return $nextId;
+    }
+
     public static function editLibro($id)
     {
         $libro = Libro::findOrFail($id);

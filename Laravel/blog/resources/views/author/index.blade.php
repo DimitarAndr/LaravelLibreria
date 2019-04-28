@@ -7,8 +7,8 @@
         @foreach($authores as $author)
             <div class="col-xs-6 col-sm-4 col-md-3 text-center">
                 <a href={{url('/author/show',array($author['escritor']))}}>
-                    <img class=" img-fluid" width="40%"
-                         src="https://visualpharm.com/assets/809/Person-595b40b65ba036ed117d315a.svg">
+                    <img class=" img-fluid"
+                         src="{{url('/photos/authores/'.$author['id'])}}" alt="Image">
                     <h4 style="min-height:45px;margin:5px 0 10px 0">
                         {{$author['escritor']}}
                     </h4>

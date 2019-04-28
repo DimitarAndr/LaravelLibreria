@@ -8,7 +8,7 @@ class Author extends Model
 {
     public static function getAuthores()
     {
-        return Libro::all('escritor');
+        return Libro::all();
     }
 
     public static function showAuthorInfo($name)

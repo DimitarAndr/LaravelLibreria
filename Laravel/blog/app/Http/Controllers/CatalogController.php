@@ -32,11 +32,11 @@ class CatalogController extends Controller
         $escritor = $_REQUEST['escritor'];
         $synopsis = $_REQUEST['synopsis'];
         $infoAddLibro = array('title' => $title, 'year' => $ano, 'escritor' => $escritor, 'rented' => 0, 'synopsis' => $synopsis);
-        $request->file('photo')->store('photos');
+        $file=$request->file('photo');
+        $nextId =Libro::getNextId();
+        $file->move('photos',$nextId);
         Libro::addNewLibro($infoAddLibro);
-
         return $this->getIndex();
-
     }
 
     public function cambiarEstadoLibro($id)

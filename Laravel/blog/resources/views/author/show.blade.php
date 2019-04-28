@@ -2,7 +2,7 @@
 $nameAuthor = $authorInfo[0]['name'];
 $fecha_nacAuthor = $authorInfo[0]['fecha_nac'];
 $nacionalidadAuthor = $authorInfo[0]['nacionalidad'];
-
+$authorInfo
 ?>
 @include('partials.navbar')
 <body>
@@ -11,7 +11,7 @@ $nacionalidadAuthor = $authorInfo[0]['nacionalidad'];
         <div class="col-sm-4">
             <h2>{{$nameAuthor}}</h2>
             <img class="img-fluid"
-                 src="https://visualpharm.com/assets/809/Person-595b40b65ba036ed117d315a.svg">
+                 src="{{url('/photos/authores/'.$authorInfo[0]['id'])}}" alt="Image">
         </div>
 
         <div class="col-sm-8">

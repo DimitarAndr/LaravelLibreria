@@ -14,12 +14,12 @@ $libroDisponible = '<p>Libro Disponible</p><button type="button" class="btn btn-
 <div class="container">
     <div class="row">
         <div class="col-sm-4">
-            <h2>{{$libro['title']}}</h2>
-            <img class="img-fluid"
-                 src="https://purepng.com/public/uploads/large/purepng.com-bookbookillustratedwrittenprintedliterature-1421526452123etpkk.png">
+            <img class="img-thumbnail"
+                 src="{{url('/photos/libros/'.$libro['id'])}}" alt="Image">
         </div>
 
         <div class="col-sm-8">
+            <h2>{{$libro['title']}}</h2>
             <table id="titleLibro" class="table">
                 <tr>
                     <td class="text-uppercase">Year</td>
