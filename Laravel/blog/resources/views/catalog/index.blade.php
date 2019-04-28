@@ -12,7 +12,7 @@
     <div class="row">
         @foreach($infoAllLibrosCat as $key => $libro )
             <div class="col-xs-6 col-sm-4 col-md-3 text-center">
-                <a href="{{ url('/catalog/show/' . intval($key+1)) }}">
+                <a href="{{ url('/catalog/show/'.$libro['id'])}}">
                     <h4 style="min-height:45px;margin:5px 0 10px 0">
                         {{$libro['title']}}
                     </h4>

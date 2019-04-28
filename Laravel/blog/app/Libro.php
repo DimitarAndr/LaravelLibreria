@@ -11,12 +11,8 @@ class Libro extends Model
 
     public static function listAllLibros()
     {
-        $titles = [];
-        $libros = Libro::all('title');
-        foreach ($libros as $libro) {
-            array_push($titles, $libro);
-        }
-        return ($titles);
+        $libros = Libro::all();
+        return $libros;
     }
 
     public static function showLibro($id)

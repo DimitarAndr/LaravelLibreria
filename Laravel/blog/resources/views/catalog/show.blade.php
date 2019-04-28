@@ -31,7 +31,7 @@ $libroDisponible = '<p>Libro Disponible</p><button type="button" class="btn btn-
                 </tr>
                 <tr>
                     <td class="text-uppercase">Rented</td>
-                    <td>{!!($libro['rented']==true)?$libroPrestado : $libroDisponible!!}<a href="{{url('CatalogController@cambiarEstadoLibro',$libro['id'])}}"></a></td>
+                        <td>{!!($libro['rented']==true)?$libroPrestado : $libroDisponible!!}</td>
                 </tr>
                 <tr>
                     <td class="text-uppercase">Synopsis</td>
@@ -39,8 +39,12 @@ $libroDisponible = '<p>Libro Disponible</p><button type="button" class="btn btn-
                 </tr>
             </table>
             <div class="buttones align-bottom" style="margin-top: 15%">
-                <button type="button" class="btn btn-secondary"><a style="text-decoration: none;color:white" href="{{ url('/catalog/edit',$libro['id'])}}">Editar</a></button>
-                <button type="button" class="btn btn-secondary"><a style="text-decoration: none;color:white" href="{{ url('/catalog')}}">Volver Catalogo</a></button>
+                <button type="button" class="btn btn-secondary"><a style="text-decoration: none;color:white"
+                                                                   href="{{ url('/catalog/edit',$libro['id'])}}">Editar</a>
+                </button>
+                <button type="button" class="btn btn-secondary"><a style="text-decoration: none;color:white"
+                                                                   href="{{ url('/catalog')}}">Volver Catalogo</a>
+                </button>
             </div>
         </div>
     </div>

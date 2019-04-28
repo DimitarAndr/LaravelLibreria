@@ -25,33 +25,35 @@ class CatalogController extends Controller
         return view('catalog.create.create');
     }
 
-    public function addLibro()
+    public function addLibro(Request $request)
     {
         $title = $_REQUEST['title'];
         $ano = $_REQUEST['year'];
-        $escritor=$_REQUEST['escritor'];
-        $synopsis=$_REQUEST['synopsis'];
-        $infoAddLibro = array('title'=>$title,'year'=>$ano,'escritor'=>$escritor,'rented'=>0,'synopsis'=>$synopsis);
-
+        $escritor = $_REQUEST['escritor'];
+        $synopsis = $_REQUEST['synopsis'];
+        $infoAddLibro = array('title' => $title, 'year' => $ano, 'escritor' => $escritor, 'rented' => 0, 'synopsis' => $synopsis);
+        $request->file('photo')->store('photos');
         Libro::addNewLibro($infoAddLibro);
 
         return $this->getIndex();
 
     }
 
-    public function cambiarEstadoLibro($id){
-       $libro=Libro::cambiarEstado($id);
-        return view ('catalog.show', ['libro' => $libro]);
+    public function cambiarEstadoLibro($id)
+    {
+        $libro = Libro::cambiarEstado($id);
+        return view('catalog.show', ['libro' => $libro]);
     }
 
     public function showEdit($id)
     {
-       Session::put('id',$id);
-        return view('catalogedit.edit');
+        Session::put('id', $id);
+        return view('catalog.edit.edit');
     }
 
-    public function getEdit(){
-        $id=Session::get('id');
+    public function getEdit()
+    {
+        $id = Session::get('id');
         $resultEdit = Libro::editLibro($id);
         return $this->getIndex();
 

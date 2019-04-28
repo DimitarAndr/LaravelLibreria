@@ -46,6 +46,7 @@
                 <!-- Right Side Of Navbar -->
                 <ul class="navbar-nav ml-auto">
                     <!-- Authentication Links -->
+
                     @guest
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -74,6 +75,12 @@
                             </div>
                         </li>
                     @endguest
+                    <li class="nav-item" {{ Request::is('contactUs*') ? ' class=active' : ''}}>
+                        <a class="nav-link" href="{{url('/contact-us')}}">
+                            <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+                          Enviar Correo
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>

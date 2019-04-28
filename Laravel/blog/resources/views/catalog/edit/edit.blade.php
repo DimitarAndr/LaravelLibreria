@@ -13,7 +13,7 @@
 </head>
 <body>
 <h2>Editar Libro</h2>
-<form method="post" action="/catalog/edit" enctype="multipart/form-data">
+<form method="post" action='/catalog/edit/' enctype="multipart/form-data">
     {{ csrf_field() }}
     <div class="form-group row">
         <label for="Titulo" class="text-capitalize col-sm-3  text-muted  font-weight-bolder">Titulo Libro</label>

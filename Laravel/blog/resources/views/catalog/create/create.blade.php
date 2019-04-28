@@ -41,6 +41,13 @@
             </div>
         </div>
         <div class="form-group row">
+            <label for="photo" class="text-capitalize text-muted col-sm-3 font-weight-bolder">Photo</label>
+            <div class="col-sm-9">
+                <input type="file" name="photo" id="photo">
+            </div>
+        </p>
+        </div>
+        <div class="form-group row">
             <div class="offset-sm-3 col-sm-9">
                 <button type="submit" class="btn btn-primary">Anadir Libro</button>
             </div>

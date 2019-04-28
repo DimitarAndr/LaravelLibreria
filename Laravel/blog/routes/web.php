@@ -27,15 +27,21 @@ Route::get('catalog', 'CatalogController@getIndex');
 
 Route::get('catalog/show/{id}', 'CatalogController@getShow');
 
-Route::get('catalog/show/{id}', 'CatalogController@cambiarEstadoLibro');
+/*Route::get('catalog/show/{id}', 'CatalogController@cambiarEstadoLibro');*/
+
+Route::get('contact-us', 'ContactUsController@contactUs');
+Route::post('contact-us',[
+    'as'=>'contactUs.store',
+    'uses'=>'ContactUsController@contactUsPost'
+]);
 
 Route::get('catalog/create', 'CatalogController@getCreate');
 
 Route::post('catalog/create', 'CatalogController@addLibro');
 
-Route::post('catalog/edit', 'CatalogController@getEdit')->name='EditLibro';
-
 Route::get('catalog/edit/{id}', 'CatalogController@showEdit');
+
+Route::post('catalog/edit/', 'CatalogController@getEdit');
 
 Route::get('catalog/delete', 'CatalogController@getLibrosForDelete');
 
@@ -49,7 +55,7 @@ Route::get('author/create', 'AuthorController@getCreate');
 
 Route::get('author/edit', 'AuthorController@getEdit');
 
-Route::get('editorial ', 'EditorialController@getIndex');
+Route::get('editorial', 'EditorialController@getIndex');
 
 Route::get('editorial/show', 'EditorialController@getShow');
 
